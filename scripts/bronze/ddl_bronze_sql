@@ -2,7 +2,7 @@
 
 Step-by-step table refresh:
 For each source table (CRM and ERP-related), it:
-Truncates the existing data in the Bronze table.
+Truncates the Bronze table before loading data.
 Loads fresh data from local CSV files using BULK INSERT.
 Measures and logs the load duration for each table.
 Logging & Timing:
@@ -10,6 +10,10 @@ Uses PRINT statements to display progress, duration of each data load, and total
 Error Handling:
 A TRY-CATCH block is implemented to catch and display error messages if the procedure fails during execution.
 Run this script to redifine the DDL stucture of ' bronze' table
+
+Parameters:
+None.
+This stored procedures does not accept any parameters or return any values
 */
 CREATE OR ALTER PROCEDURE bronze.load_bronze AS
 BEGIN
